@@ -1,0 +1,206 @@
+@font-face {
+	font-family: 'Conv_Kontanter-Bold';
+	src: url('fonts/Kontanter-Bold.eot');
+	src: local('☺'), url('../fonts/Kontanter-Bold.woff') format('woff'), url('../fonts/Kontanter-Bold.ttf') format('truetype'), url('../fonts/Kontanter-Bold.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+*{
+  padding:0;
+  margin:0;
+  -webkit-font-smoothing: antialiased;
+}
+
+html {
+  background: #0B0B0B;
+  font: menu;
+  font-size: 1vw;
+}
+
+.page {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  transition: opacity 0.3s ease;
+}
+
+/* main page */
+
+.main-page {
+  z-index: 904;
+  background: url("../src/main-bg.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.main-page .label {
+  position: absolute;
+  margin: 0 auto;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  mix-blend-mode: difference;
+}
+
+.main-page .label .tagline {
+  font-size: 1.25em;
+  font-weight: 600;
+  color: #0B0B0B;
+  text-transform: uppercase;
+  background: #FBFBFB;
+  padding: 0 0.4em;
+}
+
+.main-page .label .title {
+  font-family: Conv_Kontanter-Bold;
+  font-size: 5em;
+  color: #FBFBFB;
+  text-transform: uppercase;
+  background: transparent;
+}
+
+#to-projects {
+  position: absolute;
+  left: 50%;
+  bottom: 2vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transform: translateX(-50%);
+}
+
+#to-projects p {
+  font-size: 1.5em;
+  text-transform: uppercase;
+  font-family: Conv_Kontanter-Bold;
+  text-align: center;
+  color: #FBFBFB;
+}
+
+/* projects page */
+
+.projects-page {
+  z-index: 903;
+  background: red;
+  display: none;
+  opacity: 0;
+}
+
+/* about us page */
+
+.aboutus-page {
+  z-index: 902;
+  background: blue;
+  display: none;
+  opacity: 0;
+}
+
+/* news page */
+
+.news-page {
+  z-index: 901;
+  background: green;
+  display: none;
+  opacity: 0;
+}
+
+/* menu */
+
+.menu {
+  z-index: 900;
+  background: #FBFBFB;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+.menu .pages {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  height: 75vh;
+  width: 75vh;
+  background: #0B0B0B;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu .pages .page-button {
+  font-family: Conv_Kontanter-Bold;
+  font-size: 5em;
+  text-transform: uppercase;
+  color: #FBFBFB;
+  cursor: pointer;
+  text-align: center;
+  margin: 0.5em;
+}
+
+/* menu button */
+
+#menu-button {
+  z-index: 99998;
+  position: fixed;
+  top: 3vh;
+  left: 3vw;
+  height: 80px;
+  width: 80px;
+  transition: 0.2s ease-in-out;
+  background-repeat: no-repeat;
+  background-image: url("../src/menu-button.svg");
+  background-position: center center;
+  background-size: 85% 97%;
+}
+
+/* cursor */
+
+#cursor {
+  position: fixed;
+  border-radius: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  pointer-events: none;
+  left: -100px;
+  top: 50%;
+  mix-blend-mode: difference;
+  transition: transform 0.2s ease;
+  border: 1.5px solid #FBFBFB;
+  background-color: transparent;
+  height: 0;
+  width: 0;
+  height: 32px;
+  width: 32px;
+  z-index: 99999;
+  background: #FBFBFB;
+}
+#cursor.hover {
+  transform: scale(2) translateX(-25%) translateY(-25%);
+  border: none;
+}
+
+@media (max-width:1200px) {
+  #cursor {
+    display: none;
+  }
+
+  .menu .pages {
+    height: 75vw;
+    width: 75vw;
+    max-width: 75vh;
+    max-height: 75vh;
+  }
+
+}
