@@ -1,6 +1,6 @@
 
 var menuOpened = false;
-
+var alreadyOpening = false;
 var rotation = 0;
 
 jQuery.fn.rotate = function(degrees) {
@@ -31,23 +31,29 @@ $(document).ready(function () {
 
   // menu button
   $("#menu-button").on("click", function() {
+    if (alreadyOpening === false) {
+      if (menuOpened === false) {
+        alreadyOpening = true;
+        $(".page").css("opacity", "0");
+        $("#menu-button").rotate(60);
+        $("#menu-button").css("background-image", "url('src/menu-button-opened.svg')");
+        setTimeout(function() {
+          $('.page').css("display", "none");
+          alreadyOpening = false;
+        }, 300);
 
-    if (menuOpened === false) {
-      $(".page").css("opacity", "0");
-      $("#menu-button").rotate(60);
-      $("#menu-button").css("background-image", "url('src/menu-button-opened.svg')");
-      setTimeout(function() {$('.page').css("display", "none");}, 300);
+        menuOpened = true;
+      } else {
+        alreadyOpening = true;
+        $('.main-page').css("display", "block");
+        setTimeout(function() {$(".main-page").css("opacity", "1");}, 20);
+        $("#menu-button").rotate(0);
+        $("#menu-button").css("background-image", "url('src/menu-button.svg')");
 
-      menuOpened = true
-    } else {
-      $('.main-page').css("display", "block");
-      setTimeout(function() {$(".main-page").css("opacity", "1");}, 20);
-      $("#menu-button").rotate(0);
-      $("#menu-button").css("background-image", "url('src/menu-button.svg')");
-
-      menuOpened = false
+        menuOpened = false;
+        setTimeout(function() {alreadyOpening = false;}, 300) 
+      }
     }
-
   });
 
   // going to page
