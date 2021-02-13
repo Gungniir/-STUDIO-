@@ -51,7 +51,7 @@ $(document).ready(function () {
         $("#menu-button").css("background-image", "url('src/menu-button.svg')");
 
         menuOpened = false;
-        setTimeout(function() {alreadyOpening = false;}, 300) 
+        setTimeout(function() {alreadyOpening = false;}, 300)
       }
     }
   });
@@ -87,6 +87,49 @@ $(document).ready(function () {
       menuOpened = false
 
     }
+  });
+
+  $(".socials").on("mouseover", function() {
+    $(this).css("opacity", "0.7");
+  });
+
+  $(".socials").on("mouseout", function() {
+    $(this).css("opacity", "0");
+  });
+
+  $("#to-project-1").css("background", "#FBFBFB");
+
+  $("#to-project-1").on("click", function() {
+    $(".controls-button").css("background", "transparent");
+    $(this).css("background", "#FBFBFB");
+    $(".project").css("opacity", "0");
+    setTimeout(function() {
+      $(".project").css("display", "none");
+      $("#project-1").css("display", "flex");
+      $("#project-1").css("opacity", "1");
+    }, 200);
+  });
+
+  $("#to-project-2").on("click", function() {
+    $(".controls-button").css("background", "transparent");
+    $(this).css("background", "#FBFBFB");
+    $(".project").css("opacity", "0");
+    setTimeout(function() {
+      $(".project").css("display", "none");
+      $("#project-2").css("display", "flex");
+      $("#project-2").css("opacity", "1");
+    }, 200);
+  });
+
+  $("#to-project-3").on("click", function() {
+    $(".controls-button").css("background", "transparent");
+    $(this).css("background", "#FBFBFB");
+    $(".project").css("opacity", "0");
+    setTimeout(function() {
+      $(".project").css("display", "none");
+      $("#project-3").css("display", "flex");
+      $("#project-3").css("opacity", "1");
+    }, 200);
   });
 
 });

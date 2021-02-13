@@ -1,5 +1,5 @@
 @font-face {
-	font-family: 'Conv_Kontanter-Bold';
+	font-family: 'Kontanter-Bold';
 	src: url('fonts/Kontanter-Bold.eot');
 	src: local('☺'), url('../fonts/Kontanter-Bold.woff') format('woff'), url('../fonts/Kontanter-Bold.ttf') format('truetype'), url('../fonts/Kontanter-Bold.svg') format('svg');
 	font-weight: normal;
@@ -15,7 +15,7 @@
 html {
   background: #0B0B0B;
   font: menu;
-  font-size: 1vw;
+  font-size: calc(1em + 1vw);
 }
 
 /* Loader */
@@ -107,7 +107,7 @@ html {
 }
 
 .main-page .label .tagline {
-  font-size: 1.25em;
+  font-size: 0.6em;
   font-weight: 600;
   color: #0B0B0B;
   text-transform: uppercase;
@@ -116,8 +116,8 @@ html {
 }
 
 .main-page .label .title {
-  font-family: Conv_Kontanter-Bold;
-  font-size: 5em;
+  font-family: Kontanter-Bold;
+  font-size: 2.5em;
   color: #FBFBFB;
   text-transform: uppercase;
   background: transparent;
@@ -135,9 +135,9 @@ html {
 }
 
 #to-projects p {
-  font-size: 1.5em;
+  font-size: 0.55em;
   text-transform: uppercase;
-  font-family: Conv_Kontanter-Bold;
+  font-family: Kontanter-Bold;
   text-align: center;
   color: #FBFBFB;
 }
@@ -146,25 +146,297 @@ html {
 
 .projects-page {
   z-index: 903;
-  background: red;
+	background: url("../src/main-bg.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   display: none;
   opacity: 0;
+}
+
+.projects-page .container {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background: transparent;
+	mix-blend-mode: difference;
+	color: #FBFBFB;
+}
+
+.projects-page .container .projects {
+	height: 75vh;
+	width: 90vw;
+}
+
+.projects-page .container .project {
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	display: none;
+	flex-direction: row;
+	transition: opacity 0.2s ease;
+}
+
+.projects-page .container .project .description {
+	background: transparent;
+	width: 60%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.projects-page .container .project .description h2 {
+	font-family: Kontanter-Bold;
+	font-size: 1.25em;
+	text-align: center;
+}
+
+.projects-page .container .project .description p {
+	font-size: 0.75em;
+	text-align: center;
+	width: 60%;
+}
+
+.projects-page .container .project .description .logo {
+	max-height: 3em;
+	object-fit: contain;
+}
+
+.projects-page .container .project:nth-child(1) .screenshots {
+	width: 40%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-around;
+}
+
+.projects-page .container .project:nth-child(1) .screenshots img {
+	-webkit-filter: invert(1);
+  filter: invert(1);
+	object-fit: contain;
+	height: 45%;
+	border-radius: 10px;
+	border: 2px #000 solid;
+}
+
+.projects-page .container .project:nth-child(1) .screenshots .mobile {
+	height: 45%;
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-around;
+}
+
+.projects-page .container .project:nth-child(1) .screenshots .mobile  img {
+	-webkit-filter: invert(1);
+  filter: invert(1);
+	object-fit: contain;
+	height: 100%;
+	border-radius: 10px;
+	border: 2px #000 solid;
+}
+
+.projects-page .container .project:nth-child(2) .screenshots {
+	width: 40%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-around;
+}
+
+.projects-page .container .project:nth-child(2) .screenshots img {
+	-webkit-filter: invert(1);
+  filter: invert(1);
+	object-fit: contain;
+	height: 0;
+	border-radius: 10px;
+	border: 2px #000 solid;
+}
+
+.projects-page .container .project:nth-child(2) .screenshots .mobile {
+	height: 60%;
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-around;
+}
+
+.projects-page .container .project:nth-child(2) .screenshots .mobile  img {
+	-webkit-filter: invert(1);
+  filter: invert(1);
+	object-fit: contain;
+	height: 90%;
+	border-radius: 10px;
+	border: 2px #000 solid;
+}
+
+.projects-page .container .projects .project:first-child {
+	opacity: 1;
+	display: flex;
+}
+
+.projects-page .container .controls {
+	height: 10vh;
+	width: 30vw;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+
+.projects-page .container .controls .controls-button {
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	border: 2px #FBFBFB solid;
+	margin-left: 2vw;
+	margin-right: 2vw;
 }
 
 /* about us page */
 
 .aboutus-page {
   z-index: 902;
-  background: blue;
+	background: url("../src/aboutus-bg.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   display: none;
   opacity: 0;
+}
+
+.aboutus-page .container {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+	background: transparent;
+	mix-blend-mode: difference;
+	color: #FBFBFB;
+}
+
+.aboutus-page .container .story {
+	width: 30%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.aboutus-page .container .story h2 {
+	font-size: 1.25em;
+	font-family: Kontanter-Bold;
+	text-align: center;
+}
+
+.aboutus-page .container .story p {
+	font-size: 0.8em;
+	text-align:center;
+}
+
+.aboutus-page .container .team-container {
+	width: 50%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.aboutus-page .container .team-container .title {
+	height: 2em;
+}
+
+.aboutus-page .container .team-container .title h2 {
+	font-size: 2em;
+	font-family: Kontanter-Bold;
+	text-align: center;
+}
+
+.aboutus-page .container .team-container .team {
+	height: 70vh;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.aboutus-page .container .team-container .team .teammate {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+	text-align: center;
+	width: 40%;
+	height: 70%;
+}
+
+.aboutus-page .container .team-container .team .teammate .teammate-photo {
+	width: 30vh;
+	height: 30vh;
+	border-radius: 50%;
+	background-position: top right;
+	background: url("../src/teammate2.jpg");
+	background-size: cover;
+}
+
+.aboutus-page .container .team-container .team .teammate:first-child .teammate-photo {
+	background-position: center center;
+	background: url("../src/teammate1.jpg");
+	background-size: contain;
+}
+
+.aboutus-page .container .team-container .team .teammate .teammate-photo .socials {
+	height: 100%;
+	width: 100%;
+	border-radius: 50%;
+	opacity: 0;
+	background: #FBFBFB;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	transition: opacity 0.3s ease;
+}
+
+.aboutus-page .container .team-container .team .teammate .teammate-photo .socials a {
+	height: 30%;
+	fill: #000;
+}
+
+.aboutus-page .container .team-container .team .teammate .teammate-photo .socials a img {
+	height: 100%;
+}
+
+.aboutus-page .container .team-container .team .teammate h2 {
+	font-family: Kontanter-Bold;
+	font-size: 1em;
+}
+
+.aboutus-page .container .team-container .team .teammate p {
+	font-size: 0.7em;
 }
 
 /* news page */
 
 .news-page {
   z-index: 901;
-  background: green;
+	background: url("../src/main-bg.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   display: none;
   opacity: 0;
 }
@@ -205,8 +477,8 @@ html {
 }
 
 .menu .container .pages .page-button {
-  font-family: Conv_Kontanter-Bold;
-  font-size: 5em;
+  font-family: Kontanter-Bold;
+  font-size: 1.5em;
   text-transform: uppercase;
   color: #FBFBFB;
   cursor: pointer;
