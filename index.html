@@ -6,10 +6,14 @@
 	<script src="https://code.jquery.com/jquery-3.5.1.min.js" charset="utf-8"></script>
 	<sctipt src="js/loader.js" charset="utf-8"></sctipt>
 	<script src="js/cursor.js" charset="utf-8"></script>
-	<!-- <script src="js/animations.js" charset="utf-8"></script> -->
+	<script src="js/news.js" charset="utf-8"></script>
 	<script src="js/menu.js" charset="utf-8"></script>
 </head>
 <body>
+
+	<div id="mobile-landscape">
+		<h1>Please rotate your device to portrait.</h1>
+	</div>
 
 	<div id="lds-ripple"><div></div><div></div></div>
 	<div id="ldr-bg"></div>
@@ -127,7 +131,7 @@
 		<div class="container">
 
 			<div class="news">
-				<div class="article">
+				<div class="article" id="article-november">
 					<h2>November</h2>
 					<div class="article-text">
 						<p>At this point of time -STUDIO- was founded by Vladimir Kurus and Kostya Bunsberry for releasing a ground-breaking
@@ -135,7 +139,7 @@
 					</div>
 				</div>
 
-				<div class="article">
+				<div class="article" id="article-september">
 					<h2>September</h2>
 					<div class="article-text">
 						<p>The developement of Dream Price was finished, althought it wasn't released due to problems with apple
@@ -143,7 +147,7 @@
 					</div>
 				</div>
 
-				<div class="article">
+				<div class="article" id="article-july">
 					<h2>July</h2>
 					<div class="article-text">
 						<p>As a project for VII HSE School of Mobile Developement we developed a project for fun, which became
@@ -161,18 +165,18 @@
 					</div>
 
 					<div class="point">
-						<p>November</p>
-						<div class="pointer"></div>
+						<p id="pointer-november-text">November</p>
+						<div class="pointer" id="pointer-november"></div>
 					</div>
 
 					<div class="point">
-						<p>September</p>
-						<div class="pointer"></div>
+						<p id="pointer-september-text">September</p>
+						<div class="pointer" id="pointer-september"></div>
 					</div>
 
 					<div class="point">
-						<p>July</p>
-						<div class="pointer"></div>
+						<p id="pointer-july-text">July</p>
+						<div class="pointer"  id="pointer-july"></div>
 					</div>
 
 					<div class="point">

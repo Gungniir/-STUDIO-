@@ -18,6 +18,17 @@ $('.rotate').click(function() {
 
 $(document).ready(function () {
 
+  function doOnOrientationChange() {
+    if(window.innerHeight > window.innerWidth){               
+        document.getElementById("mobile-landscape").style.display="flex";
+    } else {
+        document.getElementById("mobile-landscape").style.display="none";
+    }
+  }
+
+  //Listen to orientation change
+  window.addEventListener('orientationchange', doOnOrientationChange); 
+
   // to projects button
 
   $("#to-projects").on("click", function() {
